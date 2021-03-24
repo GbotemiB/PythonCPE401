@@ -1,0 +1,7 @@
+venv
+converter.py
+.idea
+__pycache__
+RPS.py
+num.py
+day1.py
