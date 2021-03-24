@@ -1,7 +1,7 @@
 import LogicalFunc
 
-try:
 
+def action():
     # filter input  to be binary and return flipped bit (LSB is in the front) so as to iterate from back
     first = input('input the first 4-bit number \n')
     a = LogicalFunc.binary_4bit_num(first)
@@ -26,5 +26,13 @@ try:
     print("------------------")
     print(f"carry is {carry}")
 
-except ValueError as err:
-    print(err)
+
+def start():
+    try:
+        action()
+    except ValueError as err:
+        print(f"{err} \n ====== ")
+        start()
+
+
+start()
