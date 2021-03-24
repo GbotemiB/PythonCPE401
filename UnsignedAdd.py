@@ -22,7 +22,7 @@ try:
 
     output = ''.join([str(c_i) for c_i in c][::-1])
     print("the sum of")
-    print(f"   {first.zfill(4)}\n  +{second.zfill(4)}\n========\n   {output}")
+    print(f"   {first.zfill(4)}\n  +{second.zfill(4)}\n========\n {carry} {output}")
     print("------------------")
     print(f"carry is {carry}")
 
