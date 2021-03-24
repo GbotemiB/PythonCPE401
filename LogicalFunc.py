@@ -20,18 +20,18 @@ def __is_bit__(num: str):
 
 def get_carry(a_bit: int, b_bit: int, carry_old: int):
     # carry is equal to or(and(a[i],b[i]),and(xor(a[i],b[i]),carry_old))
-    carry_new: int = local_or((local_and(a_bit, b_bit)), local_and(local_xor(a_bit, b_bit), carry_old))
+    carry_new: int = __local_or__((__local_and__(a_bit, b_bit)), __local_and__(__local_xor___(a_bit, b_bit), carry_old))
     return carry_new
 
 
 def sum_bits(a_bit: int, b_bit: int, carry_bit: int):
     # sum is equal to xor(xor(a[i],b[i]),carry)
-    sum_bit: int = local_xor(local_xor(a_bit, b_bit), carry_bit)
+    sum_bit: int = __local_xor___(__local_xor___(a_bit, b_bit), carry_bit)
     return sum_bit
 
 
 # a function that return  OR for two bits
-def local_or(a_bit: int, b_bit: int):
+def __local_or__(a_bit: int, b_bit: int):
     if (a_bit == 0) and (b_bit == 0):
         return 0
     else:
@@ -39,7 +39,7 @@ def local_or(a_bit: int, b_bit: int):
 
 
 # a function that return exclusive OR for two bits
-def local_xor(a_bit: int, b_bit: int):
+def __local_xor___(a_bit: int, b_bit: int):
     if a_bit != b_bit:
         return 1
     else:
@@ -47,7 +47,7 @@ def local_xor(a_bit: int, b_bit: int):
 
 
 # a function that return AND for two bits
-def local_and(a_bit: int, b_bit: int):
+def __local_and__(a_bit: int, b_bit: int):
     if (a_bit == 1) and (b_bit == 1):
         return 1
     else:
