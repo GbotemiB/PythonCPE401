@@ -11,7 +11,6 @@ def subtract_and_convert_to_decimal(a, b):
         return - (int(output, 2))
     return int(output, 2)
 
-
 random = np.random
 # Prepare the data
 x = np.linspace(0, 15, 16)

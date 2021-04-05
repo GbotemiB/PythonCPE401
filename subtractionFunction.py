@@ -1,7 +1,7 @@
 import LogicalFunc
 
 
-def subtraction(first: str, second: str) :
+def subtraction(first: str, second: str):
     a = LogicalFunc.binary_4bit_num(first)
     b = LogicalFunc.binary_4bit_num(second)
     c = []
