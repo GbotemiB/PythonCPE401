@@ -27,7 +27,5 @@ def subtraction(first: str, second: str):
             carry = LogicalFunc.get_carry(c[i], 0, carry)
             c[i] = sum_new
         sign = '-'
-
     output = ''.join([str(c_i) for c_i in c][::-1])
-
     return [output, carry, sign]

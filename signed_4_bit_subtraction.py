@@ -18,18 +18,38 @@ def action():
     else:
         sign = 0
     label_bit = np.arange(4)[::-1]
-    a = [int(i) for i in first]
-    b = [int(i) for i in second]
+    a = [int(i) for i in first][::-1]
+    b = [int(i) for i in second][::-1]
     s = [sign] + [int(i) for i in output]
     s_label = ['sign'] + [str(i) for i in label_bit]
     fig, (in_a, in_b, output_c) = plt.subplots(1, 3)
-    in_a.bar(label_bit, a)
+    plot_a = in_a.bar(label_bit, a)
     in_a.set_xlabel('input a')
-    in_b.bar(label_bit, b)
+    plot_b =in_b.bar(label_bit, b)
     in_b.set_xlabel('subtracted input b')
-    output_c.bar(s_label, s)
-    output_c.set_xlabel('output b')
+    plot_c = output_c.bar(s_label, s)
+    output_c.set_xlabel('output c')
+    for bar in plot_b.patches:
+        in_b.annotate(bar.get_height(),
+                          (bar.get_x() + bar.get_width() / 2,
+                           bar.get_height()), ha='center', va='center',
+                          size=15, xytext=(0, 8),
+                          textcoords='offset points')
+    for bar in plot_a.patches:
+        in_a.annotate(bar.get_height(),
+                          (bar.get_x() + bar.get_width() / 2,
+                           bar.get_height()), ha='center', va='center',
+                          size=15, xytext=(0, 8),
+                          textcoords='offset points')
+    for bar in plot_c.patches:
+        output_c.annotate(bar.get_height(),
+                          (bar.get_x() + bar.get_width() / 2,
+                           bar.get_height()), ha='center', va='center',
+                          size=15, xytext=(0, 8),
+                          textcoords='offset points')
     plt.show()
+
+
 def start():
     try:
         action()
