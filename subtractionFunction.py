@@ -1,15 +1,15 @@
 import LogicalFunc
 
 
-def subtraction(first: str, second: str):
-    a = LogicalFunc.binary_4bit_num(first)
-    b = LogicalFunc.binary_4bit_num(second)
+def subtraction(input_a_param: str, input_b_param: str):
+    a = LogicalFunc.binary_4bit_num(input_a_param)
+    b = LogicalFunc.binary_4bit_num(input_b_param)
     c = []
     carry: int = 1  # initialized as 1 so we would have the twos complement of b
     # we would change each bit of b to the ones complement
     for i in range(4):
         a_i = int(a[i])
-        b_i = LogicalFunc.ones_complement(int(b[i]))
+        b_i = LogicalFunc.ones_complement_func(int(b[i]))
         # get sum of bit
         sum_i = LogicalFunc.sum_bits(a_i, b_i, carry)
         # get carry

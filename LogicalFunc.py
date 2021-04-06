@@ -53,7 +53,7 @@ def __generic_and__(a_bit: int, b_bit: int):
         return 0
 
 
-def ones_complement(bit: int):
+def ones_complement_func(bit: int):
     return __generic_xor___(1, bit)
 
 
