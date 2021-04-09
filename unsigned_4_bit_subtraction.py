@@ -23,13 +23,15 @@ def action():
     s = [sign] + [int(i) for i in output]
     s_label = ['sign'] + [str(i) for i in label_bit]
     fig, (in_a, in_b, output_c) = plt.subplots(1, 3)
-    in_a.bar(label_bit, a)
+    in_a.bar([str(i) for i in label_bit], a)
     in_a.set_xlabel('input a')
-    in_b.bar(label_bit, b)
+    in_b.bar([str(i) for i in label_bit], b)
     in_b.set_xlabel('subtracted input b')
     output_c.bar(s_label, s)
     output_c.set_xlabel('output c')
     plt.show()
+
+
 def start():
     try:
         action()
