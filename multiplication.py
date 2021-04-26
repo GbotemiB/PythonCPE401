@@ -18,15 +18,15 @@ def multiplication(input_a_param: str, input_b_param: str):
     print('*********************')
 
     if b[7] == 1:
-        print(f"{b[7]} the value of LSB b[0] , initializes the result as the value of A")  # debug
+        # print(f"{b[7]} the value of LSB b[0] , initializes the result as the value of A")  # debug
         result = [i for i in a]
     for i in range(6, 3, -1):  # 6 , 5 , 4
         if b[i] == 1:  # if the bit at that point is one shift and add
-            print(f"{b[i]} is the next the multiplier at position b[{7 - i}]")  # debug
+            # print(f"{b[i]} is the next the multiplier at position b[{7 - i}]")  # debug
             c = 0
             for j in range(7, -1, -1):  # this process is performing a = a + a .. ie a = 2a, shifting to the left by 1
                 a[j], c = add_bit(a[j], a[j], c)
-            print(a, end=' a in this step after shifting\n')
+            # print(a, end=' a in this step after shifting\n')
             c = 0
             for j in range(7, -1, -1):
                 result[j], c = add_bit(result[j], a[j], c)  # adding the shifted a to the result
